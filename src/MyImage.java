@@ -31,27 +31,11 @@ class MyImage {
         return img;
     }
 
-    // Flipping Horizontally
-    // public static BufferedImage flipHorizontally(BufferedImage img) throws IOException {
-    //     int col = img.getWidth();
-    //     int row = img.getHeight();
-    //     for (int r = 0; r < row; r++) {
-    //         for (int c = 0; c < col / 2; c++) {
-    //             Color currPixel = new Color(img.getRGB(c, r));
-    //             Color oppoPixel = new Color(img.getRGB(col - c, r));
-    //             img.setRGB(c, r, oppoPixel.getRGB());
-    //             img.setRGB(col - c, r, currPixel.getRGB());
-    //         }
-    //     }
-    //     return img;
-    // }
-
     public static BufferedImage flipHorizontally(BufferedImage img) throws IOException {
         int col = img.getWidth();
         int row = img.getHeight();
         for (int r = 0; r < row; r++) {
             for (int c = 0, c2 = col - 1; c < col / 2; c++, c2--) {
-                System.out.println(":" + c + ", " + r + " <--> " + c2 + ", " + r);
                 Color currPixel = new Color(img.getRGB(c, r));
                 Color oppoPixel = new Color(img.getRGB(c2, r));
                 img.setRGB(c2, r, currPixel.getRGB());
